@@ -100,10 +100,12 @@ def get_voice(requested_voice: str, default_male: str, default_female: str):
         "zh-HK-HiuMaanNeural", "zh-HK-WanLungNeural", "zh-TW-HsiaoChenNeural", "zh-TW-HsiaoYuNeural",
         "zh-TW-YunJheNeural", "zu-ZA-ThandoNeural", "zu-ZA-ThembaNeural"
     ]
-    if requested_voice.lower() == "male":
-        return default_male
-    elif requested_voice.lower() == "female":
-        return default_female
+    if requested_voice.lower() == "hongkong":
+        return "zh-HK-WanLungNeural"
+    elif requested_voice.lower() == "dongbei":
+        return "zh-CN-liaoning-XiaobeiNeural"
+    elif requested_voice.lower() == "shaanxi":
+        return "zh-CN-shaanxi-XiaoniNeural"
     elif requested_voice in ["alloy", "echo", "fable", "onyx"]:
         # 这些是OpenAI的男声，我们用默认男声替代
         return default_male
